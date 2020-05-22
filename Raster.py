@@ -23,3 +23,34 @@ class Raster(VMobject):
                 rs.append(r)
 
         self.add(*rs)
+    def get_color_raster(self,value, colores, range_values=[0,100], range_step = 10):
+        range_values_list=[]
+        for i in range(range_values[0],range_values[1],range_step):
+            range_values_list.append(i)
+        if value == range_values_list[0]:
+            col = "#000000"
+        elif value > range_values_list[0] and value < range_values_list[1]:
+            col = colores[0]
+        elif value >=range_values_list[1]  and value < range_values_list[2]:
+            col = colores[1]
+        elif value >=range_values_list[2]  and value < range_values_list[3]:
+            col = colores[2]
+        elif value >=range_values_list[3]  and value < range_values_list[4]:
+            col = colores[3]
+        elif value >=range_values_list[4]  and value < range_values_list[5]:
+            col = colores[4]
+        elif value >=range_values_list[5]  and value < range_values_list[6]:
+            col = colores[5]
+        elif value >=range_values_list[6]  and value < range_values_list[7]:
+            col = colores[6]
+        elif value >=range_values_list[7]  and value < range_values_list[8]:
+            col = colores[7]
+        elif value >=range_values_list[8]  and value < range_values_list[9]:
+            col = colores[8]
+        elif value >=range_values_list[9]:
+            col = colores[9]
+        return col
+                
+
+
+
